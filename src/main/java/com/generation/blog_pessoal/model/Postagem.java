@@ -20,17 +20,17 @@ public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
 	@Size(min = 1, max = 225)
 	private String titulo;
-	
+
 	@NotNull
 	@Size(min = 5, max = 3000)
 	private String texto;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date  date = new java.sql.Date(System.currentTimeMillis());
+	private Date date = new java.sql.Date(System.currentTimeMillis());
 
 	public long getId() {
 		return id;
@@ -63,6 +63,5 @@ public class Postagem {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
-	
+
 }
