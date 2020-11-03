@@ -19,6 +19,7 @@ import com.generation.blog_pessoal.repository.PostagemRepository;
 @CrossOrigin("*")
 public class PostagemController {
 
+	//interface
 	@Autowired
 	private PostagemRepository repository;
 
@@ -35,6 +36,12 @@ public class PostagemController {
 		return repository.findById(id)
 				.map(response -> ResponseEntity.ok(response) )
 				.orElse(ResponseEntity.notFound().build());
+	}
+	
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<Postagem>> GetByTituloPostagem(@PathVariable  String titulo){
+		return ResponseEntity.ok( repository.findAllByTituloContainingIgnoreCase(titulo) );
+				
 	}
 
 }
