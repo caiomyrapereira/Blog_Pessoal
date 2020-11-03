@@ -38,10 +38,17 @@ public class PostagemController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	@GetMapping("/titulos/{titulo}")
+	public ResponseEntity<List<Postagem>> GetByTitulosPostagens(@PathVariable  String titulo){
+			return ResponseEntity.ok( repository.findAllByTituloContainingIgnoreCase(titulo) );
+	}
+	
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> GetByTituloPostagem(@PathVariable  String titulo){
-		return ResponseEntity.ok( repository.findAllByTituloContainingIgnoreCase(titulo) );
-				
+		if(repository.findAllByTituloContainingIgnoreCase(titulo).size() == 1) 
+			return ResponseEntity.ok( repository.findAllByTituloContainingIgnoreCase(titulo) );
+		else
+			return ResponseEntity.notFound().build();
 	}
 
 }
