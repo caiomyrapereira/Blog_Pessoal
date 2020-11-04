@@ -38,11 +38,13 @@ public class PostagemController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	//titleAll
 	@GetMapping("/titulos/{titulo}")
 	public ResponseEntity<List<Postagem>> GetByTitulosPostagens(@PathVariable  String titulo){
 			return ResponseEntity.ok( repository.findAllByTituloContainingIgnoreCase(titulo) );
 	}
 	
+	//titleOne
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> GetByTituloPostagem(@PathVariable  String titulo){
 		if(repository.findAllByTituloContainingIgnoreCase(titulo).size() == 1) 
