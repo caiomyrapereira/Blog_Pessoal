@@ -24,15 +24,15 @@ import com.generation.blog_pessoal.repository.PostagemRepository;
 @RequestMapping("/allpostagens")
 @CrossOrigin("*")
 public class AllPostagemController {
-	
-	//interface
+
+	// interface
 	@Autowired
 	private PostagemRepository repository;
-	
-	//Método Delete
+
+	// Método Delete
 	@DeleteMapping
 	public void delete() {
 		repository.deleteAll();
 	}
-	
+
 }
