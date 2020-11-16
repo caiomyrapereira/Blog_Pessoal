@@ -19,18 +19,24 @@ public class UsuarioService {
 	private UsuarioRepository usuarioRepository;
 
 	public Usuario AddUsuario(Usuario usuario) {
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		if(usuarioRepository.findByEmail(usuario.getEmail()).isPresent())
+			return null;
 
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String passwordEncoder = encoder.encode(usuario.getSenha());
 		usuario.setSenha(passwordEncoder);
-
+		
 		return usuarioRepository.save(usuario);
 	}
 	
 	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
+		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = usuarioRepository.findByEmail(user.get().getEmail());
-		boolean status = usuario.isPresent() &&  encoder.matches(user.get().getSenha(),usuario.get().getSenha());
+		
+		boolean status = usuario.isPresent() && 
+				encoder.matches(user.get().getSenha(), usuario.get().getSenha());
 		
 		if(status) {
 			String auth = user.get().getEmail() +':'+ user.get().getSenha();
@@ -38,7 +44,9 @@ public class UsuarioService {
 			String authHeader = "Basic"+ new String(encodeAuth); 
 			
 			user.get().setToken(authHeader);
-			user.get().setNome(usuario.get().getNome());
+			user.get().setEmail(usuario.get().getEmail());
+			user.get().setSenha(usuario.get().getSenha());
+			
 			return user;
 		}
 		return null;
