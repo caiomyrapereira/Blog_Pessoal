@@ -1,0 +1,9 @@
+.font-text{
+    letter-spacing: .2rem;
+    font-size: 12pt;
+}
+
+
+ul li:hover{
+    border-bottom: 3px solid white;
+}
