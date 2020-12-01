@@ -1,0 +1,107 @@
+<main class="container-fluid w-100 bg-dark  p-md-0 p-sm-0 p-xl-5 p-lg-5">
+  <div class="container-fluid w-100  m-0  mt-5 mb-5">
+    <div class="row justify-content-between">
+
+      <div class=" col-xl-4  col-lg-4 col-md-12 col-sm-12 bg-light pt-5 d-flex justify-content-center">
+        <div class="card  bg-transparent  border-0" style="width: 18rem">
+          <div class=" mb-2">
+            <img class="card-img-top rounded-circle"
+              src="https://github.com/caiomyrapereira/caiomyrapereira.github.com/blob/master/fonte/img/caiomyra.jpg?raw=true"
+              alt="Imagem de capa do card">
+          </div>
+          <div class="card-body bg-light">
+            <h5 class="card-title text-center text-monospace">Título do card</h5>
+            <p class="card-text text-justify text-monospace">Um exemplo de texto rápido para construir o
+              título do card e fazer preencher o
+              conteúdo do card.</p>
+            <a href="#" class="btn btn-outline-info mb-3 d-flex justify-content-center">Linkedin</a>
+            <a href="#" class="btn btn-outline-dark mb-3 d-flex justify-content-center">Github</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-8  col-lg-8 col-md-12  col-sm-12 bg-info">
+        <h1 class="text-center  m-5 text-monospace font-weight-bolder text-white">Crie uma postagem qualquer</h1>
+
+
+        <div class="form-group">
+          <label class="text-monospace font-weight-bolder text-white" for="titulo">Título:</label>
+          <input type="text" class="form-control" id="titulo" placeholder="Digite aqui o seu titulo">
+        </div>
+
+        <div class="form-group">
+          <label class="text-monospace font-weight-bolder text-white" for="texto">Texto:</label>
+          <textarea class="form-control" id="texto" rows="3" placeholder="Digite aqui o seu texto"></textarea>
+        </div>
+
+        <div class="row d-flex align-items-end">
+          <div class="col-md-6">
+            <div class="form-group m-0">
+              <label class="text-monospace font-weight-bolder text-white" for="tema">Escolha um tema ou
+                <a class="text-white" href="">Cadastre um novo</a>
+              </label>
+              <select name="tema" id='tema' class="form-control">
+                <option>
+                  Teste 123
+                </option>
+                <option>
+                  Teste 123
+                </option>
+
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6 d-flex justify-content-end">
+            <button type="button" class="btn  btn-light  w-25">Publicar</button>
+          </div>
+        </div>
+
+        <nav class="d-flex justify-content-center mt-5">
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
+              href="#minhas-postagens" role="tab" aria-controls="nav-home" aria-selected="true">Minhas Postagens</a>
+
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-profile-tab" data-toggle="tab"
+              href="#postagens-temas" role="tab" aria-controls="nav-profile" aria-selected="false">Postagens por
+              tema</a>
+          </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+
+          <div class="tab-pane fade show active" id="minhas-postagens" role="tabpanel"
+            aria-labelledby="nav-postagens-tab">
+            <div class="row mt-3 mb-3">
+              <div class="col-md-10 pr-0">
+                <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar">
+              </div>
+              <div class="col-md-2 pl-0">
+                <button class="btn btn-outline-light w-100" type="button">Pesquisar</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="tab-pane fade" id="postagens-temas" role="tabpanel" aria-labelledby="nav-presenca-tab">
+            <div class="row mt-3 mb-3">
+              <div class="col-md-10 pr-0">
+                <input class="form-control w-100" type="search" placeholder="Pesquisar postagem" aria-label="Pesquisar">
+              </div>
+              <div class="col-md-2 pl-0">
+                <button class="btn  btn-outline-light w-100" type="button">Pesquisar</button>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <!-- criar um component postagens -->
+  </div>
+</main>

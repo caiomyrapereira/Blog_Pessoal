@@ -1,5 +1,5 @@
 <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-info row">
+    <nav class="navbar navbar-expand-lg navbar-light m-0 bg-info row">
         <div class="col-lg-3 col-xl-3 col-md-12 d-flex justify-content-between">
             <a class="navbar-brand text-white font-weight-bold" href="#"><img src="../../assets/blogging.png"
                     width="50px" height="50px" alt="logo"> Personal Blog</a>
@@ -14,11 +14,16 @@
                 <div class="menu">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link font-text text-white text-uppercase font-weight-bold p-3" href="#"> Home
-                                <span class="sr-only">(current)</span></a>
+                            <a  routerLink="/home"
+                                class="nav-link font-text text-white text-uppercase font-weight-bold p-3" href="#">
+                                Home
+                                <span class="sr-only">(current)</span>
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link font-text text-white text-uppercase font-weight-bold p-3" href="#"> Feed
+                            <a  routerLink="/feed"
+                                class="nav-link font-text text-white text-uppercase font-weight-bold p-3" href="#">
+                                Feed
                             </a>
                         </li>
                     </ul>
