@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Postagem } from '../model/PostagemModel';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  private nome: String = '';
+
+  constructor() {
+
+
+  }
 
   ngOnInit(): void {
+    this.nome = 'caio';
+    console.log(this.nome);
   }
 
 }

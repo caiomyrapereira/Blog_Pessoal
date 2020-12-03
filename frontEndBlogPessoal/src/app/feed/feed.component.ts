@@ -10,6 +10,12 @@ export class FeedComponent implements OnInit {
 
   constructor() { }
 
+  public autoResize(e: any) {
+    if (e.target.scrollHeight > e.target.offsetHeight) {
+      e.target.rows += 1;
+    }
+  }
+
   ngOnInit(): void {
   }
 
