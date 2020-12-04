@@ -26,7 +26,7 @@ export class CadastroComponent implements OnInit {
     const user: User = new User(0, this.name, this.email, this.password);
     console.log(user);
 
-    this.authService.cadastrar(user).subscribe((resp) => {
+    this.authService.cadastrar(user).subscribe((resp:User) => {
       console.log(resp)
       this.router.navigate(['/login']);
       alert('Usuario cadastrado com sucesso!')

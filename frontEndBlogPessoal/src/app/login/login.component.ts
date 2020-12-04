@@ -18,9 +18,9 @@ export class LoginComponent implements OnInit {
   ) { }
 
   public oppen(){
-    this.authService.logar(this.userLogin).subscribe((resp:any = UserLogin) =>{
-      console.log('token :'+resp.token);
-      localStorage.setItem('token', resp.token);
+    this.authService.logar(this.userLogin).subscribe((resp:UserLogin) =>{
+       console.log('token : '+resp.token)
+       localStorage.setItem('token', resp.token +'');
       this.router.navigate(['/feed']);
     });
   }
