@@ -1,8 +1,8 @@
 export class User {
         constructor(
                 public id: number,
-                public name: String,
+                public nome: String,
                 public email: String,
-                public password: String,
+                public senha: String,
         ) { }
 };

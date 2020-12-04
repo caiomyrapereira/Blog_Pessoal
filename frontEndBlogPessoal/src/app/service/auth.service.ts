@@ -8,15 +8,18 @@ import { User } from '../model/UserModel';
 })
 export class AuthService {
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  public logar(UserLogin:UserLogin){
+  public logar(UserLogin: UserLogin) {
     return this.http.post('http://localhost:9000/usuarios/logar', UserLogin);
   }
 
-  public cadastrar(User:User){
+  public cadastrar(User: User) {
     return this.http.post('http://localhost:9000/usuarios/cadastrar', User);
-  }    
+  }
 
+  btnExit() {
+    return !!localStorage.getItem('token');
+  }
 
 }
