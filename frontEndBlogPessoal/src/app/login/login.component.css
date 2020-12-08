@@ -1,3 +1,15 @@
-main{
-    height: 100vh;    
+main {
+    height: 100vh;
+}
+
+.btn-outline-success {
+    color: black;
+    background-color: #ffffff;
+    border-color: black;
+}
+
+.btn-outline-success:hover {
+    color: rgb(255, 255, 255);
+    background-color: #73C1B8;
+    border-color: #73C1B8;
 }

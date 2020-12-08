@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   public oppen(){
     this.authService.logar(this.userLogin).subscribe((resp:UserLogin) =>{
        console.log('token : '+resp.token)
-       localStorage.setItem('token', resp.token +'');
+       localStorage.setItem('token', resp.token.replace('Basic','Basic ') );
       this.router.navigate(['/feed']);
     });
   }
