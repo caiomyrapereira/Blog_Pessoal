@@ -5,6 +5,6 @@ export class Tema {
     ) {}
 
     public id: number;
-    public descricao: String;
+    public descricao: string;
     public postagem: Postagem[];
 }

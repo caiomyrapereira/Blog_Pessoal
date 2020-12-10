@@ -1,29 +1,35 @@
-
 ul.social-network {
     list-style: none;
     display: inline;
-  
     padding: 0;
-  }
-  
-  ul.social-network li {
+}
+
+ul.social-network li {
     display: inline;
     margin: 0;
     padding: 5px;
-  }
-  
-  .faGithub, .faLinkedin, .faInstagram{
-      color: white;
-  }
-  
-  .faGithub:hover{
+}
+
+.faGithub,
+.faLinkedin,
+.faInstagram {
+    color: white;
+}
+
+.faGithub:hover {
     color: black;
-  }
-  
-  .faLinkedin:hover{
-  color: #0072b1;
-  }
-  
-  .faInstagram:hover{
-  color: #C13584;
-  }
+}
+
+.faLinkedin:hover {
+    color: #0072b1;
+}
+
+.faInstagram:hover {
+    color: #C13584;
+}
+
+@media only screen and (max-width: 991px) {
+    .footer-copyright {
+        background-color: black !important;
+    }
+}

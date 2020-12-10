@@ -1,5 +1,9 @@
+.prefil {
+    position: fixed;
+}
+
 @media only screen and (max-width: 991px) {
     .prefil {
-        background-color: #f8f9fa;
+        position: static;
     }
 }

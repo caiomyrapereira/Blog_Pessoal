@@ -13,12 +13,15 @@ import { TemaService } from '../service/tema.service';
 
 export class FeedComponent implements OnInit {
 
+  key = 'data';
+  reverse = false;
+
   public postagem: Postagem = new Postagem();
   public postagens: Postagem[];
 
   private tema: Tema = new Tema();
   public temas: Tema[];
-  public idTema:number;
+  public idTema: number;
 
   constructor(
     private postagemService: PostagemService,
@@ -26,9 +29,8 @@ export class FeedComponent implements OnInit {
   ) { }
 
   public autoResize(e: any) {
-    if (e.target.scrollHeight > e.target.offsetHeight) {
+    if (e.target.scrollHeight > e.target.offsetHeight)
       e.target.rows += 1;
-    }
   }
 
   public findAllPostagens() {
@@ -38,16 +40,20 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  public addPostagem(){
+  public addPostagem() {
     this.tema.id = this.idTema;
     this.postagem.tema = this.tema;
-    this.findNewPostagem(this.postagem);
+    if (!!this.postagem.titulo && !!this.postagem.texto && !!this.idTema)
+      return this.findNewPostagem(this.postagem);
+    return alert('Preencha todos os campos antes de publicar');
   }
 
-  public findNewPostagem(postagem:Postagem){
-    this.postagemService.postPostagem( postagem ).subscribe( (resp: Postagem)=>{
+  public findNewPostagem(postagem: Postagem) {
+    this.postagemService.postPostagem(postagem).subscribe((resp: Postagem) => {
       console.log(resp);
+      this.findAllPostagens();
     });
+    alert('Sucesso!');
   }
 
   public findAllTemas() {
