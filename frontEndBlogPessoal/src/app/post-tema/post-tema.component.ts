@@ -24,11 +24,18 @@ export class PostTemaComponent implements OnInit {
     });
   }
 
-  public addTema(){
-    this.temaService.postTema( this.tema ).subscribe((resp:Tema) =>{
+  public addTema() {
+    this.temaService.postTema(this.tema).subscribe((resp: Tema) => {
       console.log(resp);
       this.getAllTemas();
     })
+  }
+
+  public deleteTema(id: number) {
+    const value = confirm("Tem certeza deseja escluir?");
+    if (value)
+      this.temaService.deleteTema(id).subscribe(() => { });
+    this.getAllTemas();
   }
 
 

@@ -76,7 +76,7 @@
 
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 container-fluid mb-1" *ngFor="let post of postagens | orderBy: key : reverse">
+                            <div class="col-12 container-fluid mb-1" *ngFor="let post of postagens | orderBy">
                                 <div class="card mb-5">
                                     <div class="card-header text-center">
                                         <h1 class="card-title">{{post.titulo}}</h1>
@@ -89,8 +89,8 @@
                                        ás
                                       {{post.date | date:'HH:mm'}}
                                     </small>
-                                        <a href="#" class="btn btn-primary mr-3">Editar</a>
-                                        <a href="#" class="btn btn-primary">Incluir</a>
+                                        <a href="#" class="btn btn-primary mr-3" [routerLink]="['/edit-postagem',post.id]" routerLinkActive="router-link-active">Editar</a>
+                                        <a class="btn btn-primary" (click)="deletePostagem(post.id)">Incluir</a>
                                     </div>
                                 </div>
                             </div>

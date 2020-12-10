@@ -56,6 +56,13 @@ export class FeedComponent implements OnInit {
     alert('Sucesso!');
   }
 
+  public deletePostagem(id: number) {
+    const value = confirm("Tem certeza deseja escluir?");
+    if (value)
+      this.postagemService.deletePostagem(id).subscribe(() => { });
+    this.findAllPostagens();
+  }
+
   public findAllTemas() {
     this.temaService.getAllTemas().subscribe((resps: Tema[]) => {
       this.temas = resps;
